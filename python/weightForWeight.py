@@ -54,6 +54,9 @@ class TestWeightForWeight(unittest.TestCase):
     def test_empty_string(self):
         self.assertEqual(orderWeight(""), "")
 
+    def test_get_position_and_sum_digits(self):
+        self.assertEqual(getPositionAndSumOfDigitsOfWeight(["99", "100"]), [(0, 18, 99), (1, 1, 100)])
+
     def test_two_values(self):
         self.assertEqual(orderWeight("99 100"), "100 99")
 
