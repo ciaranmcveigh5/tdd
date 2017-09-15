@@ -38,7 +38,6 @@ def getPositionAndSumOfDigitsOfWeight(weightsArray):
         for index in range(0, len(weightIndividualDigitsArray)):
             total += int(weightIndividualDigitsArray[index])
         values.append((i, total, int(weightsArray[i])))
-    print(values)
     return values
 
 def sortValuesBasedOnSumOfDigits(values, weightsArray):
@@ -56,6 +55,9 @@ class TestWeightForWeight(unittest.TestCase):
 
     def test_get_position_and_sum_digits(self):
         self.assertEqual(getPositionAndSumOfDigitsOfWeight(["99", "100"]), [(0, 18, 99), (1, 1, 100)])
+
+    def test_sort_values(self):
+        self.assertEqual(sortValuesBasedOnSumOfDigits([(0, 18, 99), (1, 1, 100)], ["99", "100"]), ["100", "99"])
 
     def test_two_values(self):
         self.assertEqual(orderWeight("99 100"), "100 99")
